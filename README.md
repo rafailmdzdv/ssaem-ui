@@ -1,10 +1,9 @@
-![CI](https://github.com/rafailmdzdv/hangugeoreul-gongbuhaeyo-frontend/actions/workflows/workflow.yml/badge.svg)
-[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
+![CI](https://github.com/rafailmdzdv/ssaem-ui/actions/workflows/workflow.yml/badge.svg)
 
-# 한국어 선생이 프런트엔드
+# 쌤 UI
 
 ## Motivation
 
-### I want to develop this helper to help learn Korean.
+### I want develop this helper to help learn Korean.
 
-[저버](https://github.com/rafailmdzdv/hangugeoreul-gongbuhaeyo)
+[쌤의 저버](https://github.com/rafailmdzdv/ssaem)
