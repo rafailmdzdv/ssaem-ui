@@ -126,4 +126,16 @@
   html {
     @apply font-sans;
   }
+  button, [role="button"],
+  input[type="file"]
+  {
+    cursor: pointer;
+  }
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
