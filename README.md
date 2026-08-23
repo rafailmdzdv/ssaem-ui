@@ -1,9 +1,21 @@
-![CI](https://github.com/rafailmdzdv/ssaem-ui/actions/workflows/workflow.yml/badge.svg)
+# Next.js template
 
-# 쌤 UI
+This is a Next.js template with shadcn/ui.
 
-## Motivation
+## Adding components
 
-### I want develop this helper to help learn Korean.
+To add components to your app, run the following command:
 
-[쌤의 저버](https://github.com/rafailmdzdv/ssaem)
+```bash
+npx shadcn@latest add button
+```
+
+This will place the ui components in the `components` directory.
+
+## Using components
+
+To use the components in your app, import them as follows:
+
+```tsx
+import { Button } from "@/components/ui/button";
+```
