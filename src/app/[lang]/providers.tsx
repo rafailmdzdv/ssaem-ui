@@ -1,14 +1,32 @@
 "use client";
 
-import { createContext } from "react";
+import {
+  Context,
+  type Dispatch,
+  type SetStateAction,
+  createContext,
+  useEffect,
+  useState,
+} from "react";
 
 import { EmptyUser, type User } from "@/lib/types";
 
-export const UserContext = createContext(EmptyUser);
+export const UserContext: Context<{
+  user: User;
+  setUserFn: SetStateAction<Dispatch<User>> | null;
+}> = createContext({ user: EmptyUser, setUserFn: null });
 
 export function UserProvider({
   children,
-  user,
+  user: apiUser,
 }: Readonly<{ children: React.ReactNode; user: User }>) {
-  return <UserContext.Provider value={user}>{children}</UserContext.Provider>;
+  const [user, setUser] = useState<User>(apiUser);
+  useEffect(() => {
+    setUser(apiUser);
+  }, [apiUser]);
+  return (
+    <UserContext.Provider value={{ user, setUserFn: setUser }}>
+      {children}
+    </UserContext.Provider>
+  );
 }

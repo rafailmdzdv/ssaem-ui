@@ -13,68 +13,112 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/app/[lang]/auth/page.tsx:35
-#: src/components/layout/ProfileDialog.tsx:87
+#: src/components/practice/SentenceBuilder.tsx:82
+msgid "Build a sentence"
+msgstr "Сгенерировать предложение"
+
+#: src/components/practice/SentenceBuilder.tsx:37
+msgid "Building a sentence..."
+msgstr ""
+
+#: src/components/practice/SentenceBuilder.tsx:107
+msgid "Check"
+msgstr ""
+
+#: src/app/[lang]/auth/page.tsx:36
+#: src/components/layout/ProfileDialog.tsx:105
 msgid "Email"
 msgstr "Эл. почта"
 
-#: src/components/layout/ProfileDialog.tsx:99
+#: src/components/layout/ProfileDialog.tsx:117
 msgid "First name"
 msgstr "Имя"
 
-#: src/app/[lang]/auth/page.tsx:50
-#: src/app/[lang]/page.tsx:20
+#: src/app/[lang]/auth/page.tsx:51
 msgid "Forgot the password?"
 msgstr "Забыли пароль?"
 
-#: src/components/layout/LanguageSelect.tsx:59
+#: src/components/layout/LanguageSelect.tsx:60
 msgid "Language"
 msgstr "Язык"
 
-#: src/components/layout/ProfileDialog.tsx:115
+#: src/components/layout/ProfileDialog.tsx:129
 msgid "Last name"
 msgstr "Отчество"
 
-#: src/app/[lang]/auth/page.tsx:47
+#: src/app/[lang]/auth/page.tsx:48
 msgid "Password"
 msgstr "Пароль"
 
-#: src/components/layout/ProfileDialog.tsx:76
-msgid "Processing..."
-msgstr "В процессе..."
+#: src/components/layout/ProfileDialog.tsx:54
+#: src/components/layout/ProfileDialog.tsx:94
+#: src/components/layout/SettingsDialog.tsx:62
+msgid "Processing"
+msgstr ""
 
-#: src/components/layout/Header.tsx:50
-#: src/components/layout/ProfileDialog.tsx:53
+#: src/components/layout/ProfileDialog.tsx:76
+#~ msgid "Processing..."
+#~ msgstr "В процессе..."
+
+#: src/components/layout/Header.tsx:56
+#: src/components/layout/ProfileDialog.tsx:66
 msgid "Profile"
 msgstr "Профиль"
 
-#: src/components/layout/ProfileDialog.tsx:127
-#: src/components/layout/SettingsDialog.tsx:73
+#: src/components/layout/ProfileDialog.tsx:139
+#: src/components/layout/SettingsDialog.tsx:106
 msgid "Save"
 msgstr "Сохранить"
 
-#: src/components/layout/Header.tsx:54
-#: src/components/layout/SettingsDialog.tsx:41
+#: src/components/practice/SentenceBuilder.tsx:61
+msgid "Sentence practice"
+msgstr ""
+
+#: src/components/layout/Header.tsx:60
+#: src/components/layout/SettingsDialog.tsx:54
 msgid "Settings"
 msgstr "Настройки"
 
-#: src/app/[lang]/auth/page.tsx:27
-#: src/app/[lang]/auth/page.tsx:65
+#: src/components/layout/SettingsDialog.tsx:63
+msgid "Settings was saved successfully!"
+msgstr ""
+
+#: src/app/[lang]/auth/page.tsx:28
+#: src/app/[lang]/auth/page.tsx:66
 msgid "Sign in"
 msgstr "Войти"
 
-#: src/components/layout/Header.tsx:58
+#: src/components/layout/Header.tsx:64
 msgid "Sign out"
 msgstr "Выйти"
 
-#: src/components/layout/ProfileDialog.tsx:78
+#: src/components/layout/ProfileDialog.tsx:56
+#: src/components/layout/ProfileDialog.tsx:96
+#: src/components/layout/SettingsDialog.tsx:64
+#: src/components/practice/SentenceBuilder.tsx:39
 msgid "Something went wrong."
 msgstr "Что-то пошло не так."
 
-#: src/components/layout/SettingsDialog.tsx:51
+#: src/components/layout/SettingsDialog.tsx:77
 msgid "Source language"
 msgstr ""
 
-#: src/components/layout/ProfileDialog.tsx:77
+#: src/components/layout/ProfileDialog.tsx:55
+msgid "The profile picture was updated successfully!"
+msgstr ""
+
+#: src/components/layout/ProfileDialog.tsx:95
 msgid "The profile was updated successfully!"
 msgstr "Профиль был успешно изменён!"
+
+#: src/components/practice/SentenceBuilder.tsx:38
+msgid "The sentence is ready!"
+msgstr ""
+
+#: src/components/practice/SentenceBuilder.tsx:68
+msgid "Your sentence will appear here."
+msgstr ""
+
+#: src/components/practice/SentenceBuilder.tsx:91
+msgid "Your translation"
+msgstr ""

@@ -16,16 +16,17 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
+import { SidebarTrigger } from "../ui/sidebar";
 import SettingsDialog from "./SettingsDialog";
 
-export default function Header({ lang }) {
+export default function Header() {
   const [isProfileDialogOpen, setProfileDialogOpen] = useState<boolean>(false);
   const [isSettingsDialogOpen, setSettingsDialogOpen] =
     useState<boolean>(false);
-  const user = useContext(UserContext);
+  const { user } = useContext(UserContext);
 
   return (
-    <header className="p-3">
+    <header className="p-3 flex">
       <ProfileDialog
         isDialogOpen={isProfileDialogOpen}
         dialogOpenFn={setProfileDialogOpen}
@@ -34,6 +35,9 @@ export default function Header({ lang }) {
         isDialogOpen={isSettingsDialogOpen}
         dialogOpenFn={setSettingsDialogOpen}
       />
+      <div className="flex w-full justify-start">
+        <SidebarTrigger />
+      </div>
       <div className="flex w-full justify-end">
         <DropdownMenu>
           <DropdownMenuTrigger

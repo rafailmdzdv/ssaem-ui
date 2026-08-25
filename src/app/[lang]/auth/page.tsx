@@ -21,7 +21,7 @@ export default async function Page({
   initLingui(lang);
 
   return (
-    <div className="flex min-h-screen w-full items-center justify-center">
+    <div className="flex h-full w-full items-center justify-center">
       <Card className="w-full max-w-sm">
         <CardHeader>
           <CardTitle>

@@ -43,3 +43,60 @@ export const updateUserTargetSchema = updateUserSourceSchema.transform(
 );
 
 export type UpdateUserFields = z.infer<typeof updateUserSourceSchema>;
+
+export const generatedSentenceSchema = z.object({
+  sentence: z.string(),
+});
+
+export type GeneratedSentence = z.infer<typeof generatedSentenceSchema>;
+
+export const checkTranslationSchema = z.object({
+  sentence: z.string().min(1),
+  translation: z.string().min(1),
+});
+
+export type CheckTranslationFields = z.infer<typeof checkTranslationSchema>;
+
+export const checkResultSchema = z.object({
+  correct: z.boolean(),
+});
+
+export type CheckResult = z.infer<typeof checkResultSchema>;
+
+export const topikLevelEnum = z.enum(["topik1", "topik2", "none"]);
+
+export type TopikLevel = z.infer<typeof topikLevelEnum>;
+
+export const wordSchema = z.object({
+  id: z.number(),
+  word: z.string(),
+  translation: z.string(),
+  level: topikLevelEnum,
+});
+
+export const wordsSchema = z.array(wordSchema);
+
+export type Word = z.infer<typeof wordSchema>;
+
+export const addWordSourceSchema = z.object({
+  word: z.string().min(1),
+  translation: z.string().min(1),
+  level: topikLevelEnum,
+});
+
+export type AddWordFields = z.infer<typeof addWordSourceSchema>;
+
+export const grammarSchema = z.object({
+  name: z.string(),
+  explanation: z.string(),
+});
+
+export const grammarsSchema = z.array(grammarSchema);
+
+export type Grammar = z.infer<typeof grammarSchema>;
+
+export const addGrammarSourceSchema = z.object({
+  grammar: z.string().min(1),
+});
+
+export type AddGrammarFields = z.infer<typeof addGrammarSourceSchema>;

@@ -54,9 +54,7 @@ export default async function RootLayout({
               initialLocale={lang}
               initialMessages={i18n.messages!}
             >
-              <div className="flex h-full flex-col">
-                <Header lang={lang} />
-                <hr />
+              <div className="flex h-full flex-col w-full">
                 {children}
                 <hr />
                 <Footer lang={lang} />
