@@ -3,7 +3,7 @@ import { Trans, useLingui } from "@lingui/react/macro";
 import { Dispatch, SetStateAction, useContext } from "react";
 import { Controller, useForm } from "react-hook-form";
 
-import { updateUser } from "@/app/[lang]/actions";
+import { updateUser, uploadAvatar } from "@/app/[lang]/actions";
 import { UserContext } from "@/app/[lang]/providers";
 import {
   Dialog,
@@ -14,7 +14,6 @@ import {
 import {
   Field,
   FieldDescription,
-  FieldError,
   FieldGroup,
   FieldLabel,
   FieldSet,
@@ -26,6 +25,8 @@ import { Avatar, AvatarImage } from "../ui/avatar";
 import { Button } from "../ui/button";
 import { Toaster, toast } from "../ui/toast";
 
+const ACCEPT_IMAGE_TYPES = ["jpg", "jpeg", "png"];
+
 export default function ProfileDialog({
   isDialogOpen,
   dialogOpenFn,
@@ -33,7 +34,7 @@ export default function ProfileDialog({
   isDialogOpen: boolean;
   dialogOpenFn: Dispatch<SetStateAction<boolean>>;
 }>) {
-  const user = useContext(UserContext);
+  const { user, setUserFn } = useContext(UserContext);
   const form = useForm<UpdateUserFields>({
     resolver: zodResolver(updateUserSourceSchema),
     defaultValues: {
@@ -42,6 +43,20 @@ export default function ProfileDialog({
     },
   });
   const { t } = useLingui();
+
+  const handleFileInput = async (e) => {
+    toast.promise(
+      (async () => {
+        const { avatar_url } = await uploadAvatar(e.target.files);
+        setUserFn((prev) => ({ ...prev, avatarUrl: avatar_url }));
+      })(),
+      {
+        loading: t`Processing`,
+        success: t`The profile picture was updated successfully!`,
+        error: t`Something went wrong.`,
+      },
+    );
+  };
 
   return (
     <Dialog open={isDialogOpen} onOpenChange={dialogOpenFn}>
@@ -61,7 +76,12 @@ export default function ProfileDialog({
               />
             </Avatar>
             <Field className="flex w-full flex-col items-center">
-              <Input type="file" className="max-w-1/2" />
+              <Input
+                type="file"
+                className="max-w-1/2"
+                accept={ACCEPT_IMAGE_TYPES.join(", ")}
+                onInput={handleFileInput}
+              />
               <FieldDescription className="text-center">
                 Upload an image as the avatar
               </FieldDescription>

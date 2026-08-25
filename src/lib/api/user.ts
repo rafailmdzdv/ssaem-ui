@@ -10,6 +10,10 @@ class UserRoutes {
     return this.buildUrl("update/");
   }
 
+  uploadAvatar(): string {
+    return this.buildUrl("upload_avatar/");
+  }
+
   buildUrl(path: string): string {
     return this.backend_url + "/" + this.base_path + "/" + path;
   }

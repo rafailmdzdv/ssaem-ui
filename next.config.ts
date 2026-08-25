@@ -4,6 +4,9 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   experimental: {
     swcPlugins: [linguiMacroSwcPlugin()],
+    serverActions: {
+      bodySizeLimit: "5mb",
+    },
   },
   turbopack: {
     rules: {
