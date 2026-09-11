@@ -3,7 +3,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Trans, useLingui } from "@lingui/react/macro";
 import { useRouter } from "next/navigation";
-import { Dispatch, SetStateAction, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 
 import { addGrammar } from "@/app/[lang]/actions";
@@ -24,6 +24,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Toaster, toast } from "@/components/ui/toast";
+import { krGrammars } from "@/lib/data/krGrammars";
 import {
   type AddGrammarFields,
   type Grammar,
@@ -38,16 +39,21 @@ export default function AddGrammarDialog({
   isDialogOpen: boolean;
   dialogOpenFn: Dispatch<SetStateAction<boolean>>;
 }>) {
+  const [grammars, setGrammars] = useState([]);
   const router = useRouter();
   const { t } = useLingui();
   const form = useForm<AddGrammarFields>({
     resolver: zodResolver(addGrammarSourceSchema),
   });
-  const grammars = [{ name: "faddfadd", explanation: "안녕" }]; // The mock data
+
+  useEffect(() => {
+    krGrammars().then((grammars) => setGrammars(grammars));
+  }, []);
+
   const [selectedGrammar, setSelectedGrammar] = useState<string | null>(null);
   const selectedExplanation = grammars.find(
-    (grammar) => grammar.name === selectedGrammar,
-  )?.explanation;
+    (grammar) => grammar.title === selectedGrammar,
+  )?.description;
 
   return (
     <Dialog open={isDialogOpen} onOpenChange={dialogOpenFn}>
@@ -87,8 +93,8 @@ export default function AddGrammarDialog({
                   <Select
                     id="grammar"
                     items={grammars.map((grammar) => ({
-                      value: grammar.name,
-                      label: grammar.name,
+                      value: grammar.title,
+                      label: grammar.title,
                     }))}
                     value={field.value}
                     onValueChange={(value) => {
@@ -104,8 +110,8 @@ export default function AddGrammarDialog({
                     <SelectContent>
                       <SelectGroup>
                         {grammars.map((grammar) => (
-                          <SelectItem key={grammar.name} value={grammar.name}>
-                            {grammar.name}
+                          <SelectItem key={grammar.title} value={grammar.title}>
+                            {grammar.title}
                           </SelectItem>
                         ))}
                       </SelectGroup>
