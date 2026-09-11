@@ -126,9 +126,9 @@
   html {
     @apply font-sans;
   }
-  button, [role="button"],
-  input[type="file"]
-  {
+  button,
+  [role="button"],
+  input[type="file"] {
     cursor: pointer;
   }
 }
