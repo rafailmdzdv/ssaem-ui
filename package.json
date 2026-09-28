@@ -18,6 +18,8 @@
     "@lingui/react": "^6.6.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "cn": "^0.4.0",
+    "fast-xml-parser": "^5.11.1",
     "flag-icons": "^7.5.0",
     "lucide-react": "^1.33.0",
     "negotiator": "^1.1.0",

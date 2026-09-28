@@ -3,11 +3,19 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Trans, useLingui } from "@lingui/react/macro";
 import { useRouter } from "next/navigation";
-import { Dispatch, SetStateAction, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 
 import { addGrammar } from "@/app/[lang]/actions";
 import { Button } from "@/components/ui/button";
+import {
+  Combobox,
+  ComboboxContent,
+  ComboboxEmpty,
+  ComboboxInput,
+  ComboboxItem,
+  ComboboxList,
+} from "@/components/ui/combobox";
 import {
   Dialog,
   DialogContent,
@@ -15,18 +23,10 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { Field, FieldGroup, FieldLabel } from "@/components/ui/field";
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { Toaster, toast } from "@/components/ui/toast";
+import { krGrammars } from "@/lib/data/krGrammars";
 import {
   type AddGrammarFields,
-  type Grammar,
   addGrammarSourceSchema,
 } from "@/lib/types";
 import { Routes } from "@/routes";
@@ -38,16 +38,21 @@ export default function AddGrammarDialog({
   isDialogOpen: boolean;
   dialogOpenFn: Dispatch<SetStateAction<boolean>>;
 }>) {
+  const [grammars, setGrammars] = useState([]);
   const router = useRouter();
   const { t } = useLingui();
   const form = useForm<AddGrammarFields>({
     resolver: zodResolver(addGrammarSourceSchema),
   });
-  const grammars = [{ name: "faddfadd", explanation: "안녕" }]; // The mock data
+
+  useEffect(() => {
+    krGrammars().then((grammars) => setGrammars(grammars));
+  }, []);
+
   const [selectedGrammar, setSelectedGrammar] = useState<string | null>(null);
   const selectedExplanation = grammars.find(
-    (grammar) => grammar.name === selectedGrammar,
-  )?.explanation;
+    (grammar) => grammar.title === selectedGrammar,
+  )?.description;
 
   return (
     <Dialog open={isDialogOpen} onOpenChange={dialogOpenFn}>
@@ -84,33 +89,28 @@ export default function AddGrammarDialog({
                   <FieldLabel htmlFor="grammar">
                     <Trans>Grammar</Trans>
                   </FieldLabel>
-                  <Select
+                  <Combobox
                     id="grammar"
-                    items={grammars.map((grammar) => ({
-                      value: grammar.name,
-                      label: grammar.name,
-                    }))}
-                    value={field.value}
+                    items={grammars.map((grammar) => grammar.title)}
                     onValueChange={(value) => {
                       field.onChange(value);
                       setSelectedGrammar(value);
                     }}
                   >
-                    <SelectTrigger className="w-full">
-                      <SelectValue
-                        placeholder={<Trans>Select a grammar</Trans>}
-                      />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectGroup>
-                        {grammars.map((grammar) => (
-                          <SelectItem key={grammar.name} value={grammar.name}>
-                            {grammar.name}
-                          </SelectItem>
-                        ))}
-                      </SelectGroup>
-                    </SelectContent>
-                  </Select>
+                    <ComboboxInput placeholder={t`Select a grammar`} />
+                    <ComboboxContent>
+                      <ComboboxEmpty>
+                        <Trans>There is no any grammar</Trans>
+                      </ComboboxEmpty>
+                      <ComboboxList>
+                        {(item) => (
+                          <ComboboxItem key={item} value={item}>
+                            {item}
+                          </ComboboxItem>
+                        )}
+                      </ComboboxList>
+                    </ComboboxContent>
+                  </Combobox>
                 </Field>
               )}
             />
