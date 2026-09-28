@@ -9,25 +9,24 @@ import { Controller, useForm } from "react-hook-form";
 import { addGrammar } from "@/app/[lang]/actions";
 import { Button } from "@/components/ui/button";
 import {
+  Combobox,
+  ComboboxContent,
+  ComboboxEmpty,
+  ComboboxInput,
+  ComboboxItem,
+  ComboboxList,
+} from "@/components/ui/combobox";
+import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
 import { Field, FieldGroup, FieldLabel } from "@/components/ui/field";
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { Toaster, toast } from "@/components/ui/toast";
 import { krGrammars } from "@/lib/data/krGrammars";
 import {
   type AddGrammarFields,
-  type Grammar,
   addGrammarSourceSchema,
 } from "@/lib/types";
 import { Routes } from "@/routes";
@@ -90,33 +89,28 @@ export default function AddGrammarDialog({
                   <FieldLabel htmlFor="grammar">
                     <Trans>Grammar</Trans>
                   </FieldLabel>
-                  <Select
+                  <Combobox
                     id="grammar"
-                    items={grammars.map((grammar) => ({
-                      value: grammar.title,
-                      label: grammar.title,
-                    }))}
-                    value={field.value}
+                    items={grammars.map((grammar) => grammar.title)}
                     onValueChange={(value) => {
                       field.onChange(value);
                       setSelectedGrammar(value);
                     }}
                   >
-                    <SelectTrigger className="w-full">
-                      <SelectValue
-                        placeholder={<Trans>Select a grammar</Trans>}
-                      />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectGroup>
-                        {grammars.map((grammar) => (
-                          <SelectItem key={grammar.title} value={grammar.title}>
-                            {grammar.title}
-                          </SelectItem>
-                        ))}
-                      </SelectGroup>
-                    </SelectContent>
-                  </Select>
+                    <ComboboxInput placeholder={t`Select a grammar`} />
+                    <ComboboxContent>
+                      <ComboboxEmpty>
+                        <Trans>There is no any grammar</Trans>
+                      </ComboboxEmpty>
+                      <ComboboxList>
+                        {(item) => (
+                          <ComboboxItem key={item} value={item}>
+                            {item}
+                          </ComboboxItem>
+                        )}
+                      </ComboboxList>
+                    </ComboboxContent>
+                  </Combobox>
                 </Field>
               )}
             />

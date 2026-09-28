@@ -1,7 +1,283 @@
-<?xml version="1.0"?>
+<?xml version="1.0" ?>
 <grammars>
     <grammar>
+        <title>과/와</title>
+        <description>и (существительные)</description>
+    </grammar>
+    <grammar>
+        <title>아/어/여서</title>
+        <description>и; поэтому</description>
+    </grammar>
+    <grammar>
+        <title>는지 알다/모르다</title>
+        <description>знать/не знать, что...</description>
+    </grammar>
+    <grammar>
+        <title>는데</title>
+        <description>а, но (фон)</description>
+    </grammar>
+    <grammar>
+        <title>고</title>
+        <description>и (действия)</description>
+    </grammar>
+    <grammar>
+        <title>(으)러</title>
+        <description>чтобы (с глаголами движения)</description>
+    </grammar>
+    <grammar>
+        <title>(으)로</title>
+        <description>на, в сторону, с помощью</description>
+    </grammar>
+    <grammar>
+        <title>지만</title>
+        <description>но (противопоставление)</description>
+    </grammar>
+    <grammar>
         <title>아/어/여 있다</title>
-        <description>Находиться в состоянии</description>
+        <description>состояние</description>
+    </grammar>
+    <grammar>
+        <title>아/어/여 주라고/달라고 하다</title>
+        <description>попросить сделать</description>
+    </grammar>
+    <grammar>
+        <title>고 있다</title>
+        <description>-ing</description>
+    </grammar>
+    <grammar>
+        <title>에서/부터 ~ 까지</title>
+        <description>от...до</description>
+    </grammar>
+    <grammar>
+        <title>아/어/여 주다</title>
+        <description>сделать для кого-то</description>
+    </grammar>
+    <grammar>
+        <title>는 법</title>
+        <description>способ</description>
+    </grammar>
+    <grammar>
+        <title>는 동안/동안</title>
+        <description>пока, в течение</description>
+    </grammar>
+    <grammar>
+        <title>에게/한테</title>
+        <description>кому</description>
+    </grammar>
+    <grammar>
+        <title>도</title>
+        <description>тоже</description>
+    </grammar>
+    <grammar>
+        <title>(으)ㄹ 수 있다/없다</title>
+        <description>мочь/не мочь</description>
+    </grammar>
+    <grammar>
+        <title>(으)ㄹ까요</title>
+        <description>давай/как думаешь</description>
+    </grammar>
+    <grammar>
+        <title>고 싶다/싫다</title>
+        <description>хотеть/не хотеть</description>
+    </grammar>
+    <grammar>
+        <title>못하다</title>
+        <description>не мочь</description>
+    </grammar>
+    <grammar>
+        <title>않다</title>
+        <description>не (формальное)</description>
+    </grammar>
+    <grammar>
+        <title>(으)ㅂ시다/자</title>
+        <description>давай сделаем</description>
+    </grammar>
+    <grammar>
+        <title>는 것</title>
+        <description>существительное от глагола</description>
+    </grammar>
+    <grammar>
+        <title>(으)면</title>
+        <description>если</description>
+    </grammar>
+    <grammar>
+        <title>(이)나</title>
+        <description>или (существительные)</description>
+    </grammar>
+    <grammar>
+        <title>거나</title>
+        <description>или (действия)</description>
+    </grammar>
+    <grammar>
+        <title>네요</title>
+        <description>оказывается!</description>
+    </grammar>
+    <grammar>
+        <title>(으)려고</title>
+        <description>чтобы (с любыми глаголами)</description>
+    </grammar>
+    <grammar>
+        <title>(으)ㄴ 후에</title>
+        <description>после того, как</description>
+    </grammar>
+    <grammar>
+        <title>(으)니까</title>
+        <description>так как, потому что</description>
+    </grammar>
+    <grammar>
+        <title>을/를 위해서</title>
+        <description>для, ради</description>
+    </grammar>
+    <grammar>
+        <title>기 전에</title>
+        <description>перед тем, как</description>
+    </grammar>
+    <grammar>
+        <title>(으)ㄹ 때</title>
+        <description>когда (во время)</description>
+    </grammar>
+    <grammar>
+        <title>(으)ㄴ 적이 있다/없다</title>
+        <description>бывало/не бывало</description>
+    </grammar>
+    <grammar>
+        <title>(으)ㄴ 지</title>
+        <description>прошло время с тех пор</description>
+    </grammar>
+    <grammar>
+        <title>(으)면서</title>
+        <description>одновременно</description>
+    </grammar>
+    <grammar>
+        <title>(으)ㄴ/는데도</title>
+        <description>несмотря на то, что</description>
+    </grammar>
+    <grammar>
+        <title>기 때문에</title>
+        <description>потому что (формальная)</description>
+    </grammar>
+    <grammar>
+        <title>(으)세요/(으)십시오</title>
+        <description>вежливая просьба</description>
+    </grammar>
+    <grammar>
+        <title>한다고 하다</title>
+        <description>говорит, что делает</description>
+    </grammar>
+    <grammar>
+        <title>했다고 하다</title>
+        <description>говорит, что сделал</description>
+    </grammar>
+    <grammar>
+        <title>하라고 하다</title>
+        <description>говорит, чтобы делал</description>
+    </grammar>
+    <grammar>
+        <title>하자고 하다</title>
+        <description>предлагает вместе</description>
+    </grammar>
+    <grammar>
+        <title>하겠다고 하다</title>
+        <description>говорит, что собирается</description>
+    </grammar>
+    <grammar>
+        <title>냐고/느냐고 하다</title>
+        <description>косвенный вопрос</description>
+    </grammar>
+    <grammar>
+        <title>지 말라고 하다</title>
+        <description>говорит, чтобы не делал</description>
+    </grammar>
+    <grammar>
+        <title>아/어/여 지다</title>
+        <description>становиться</description>
+    </grammar>
+    <grammar>
+        <title>아/어/여야 되다/하다</title>
+        <description>нужно, должен</description>
+    </grammar>
+    <grammar>
+        <title>(으)ㄹ까 봐</title>
+        <description>боюсь, что</description>
+    </grammar>
+    <grammar>
+        <title>(으)ㄹ 줄 알다/모르다</title>
+        <description>уметь/не уметь</description>
+    </grammar>
+    <grammar>
+        <title>아/어/여 보다</title>
+        <description>попробовать сделать</description>
+    </grammar>
+    <grammar>
+        <title>아/어/여 버리다</title>
+        <description>сделать окончательно</description>
+    </grammar>
+    <grammar>
+        <title>도록</title>
+        <description>чтобы / до такой степени</description>
+    </grammar>
+    <grammar>
+        <title>처럼/같이</title>
+        <description>как, похожий на</description>
+    </grammar>
+    <grammar>
+        <title>것처럼</title>
+        <description>как будто</description>
+    </grammar>
+    <grammar>
+        <title>아/어 놓다 (두다)</title>
+        <description>оставить в каком-то состоянии</description>
+    </grammar>
+    <grammar>
+        <title>причастные формы</title>
+        <description>ㄴ/은 (прош.) / 는 (наст.) / ㄹ/을 (буд.)</description>
+    </grammar>
+    <grammar>
+        <title>косвенная речь</title>
+        <description>달라고/주라고/라고/자고/냐고</description>
+    </grammar>
+    <grammar>
+        <title>(으)ㄴ/는 줄 알았다</title>
+        <description>думал, что… считал, что…</description>
+    </grammar>
+    <grammar>
+        <title>(으)시</title>
+        <description>почтительная форма утверждения</description>
+    </grammar>
+    <grammar>
+        <title>아/어/여야지</title>
+        <description>должен, необходимо</description>
+    </grammar>
+    <grammar>
+        <title>아/어/여도 되다</title>
+        <description>разрешено, можно</description>
+    </grammar>
+    <grammar>
+        <title>(으)면 안 되다</title>
+        <description>нельзя, запрещено</description>
+    </grammar>
+    <grammar>
+        <title>기로 하다</title>
+        <description>решил; принял решение; договорились, что…</description>
+    </grammar>
+    <grammar>
+        <title>(으)ㄴ/는/(으)ㄹ 것 같다</title>
+        <description>кажется, что; похоже, что; кажется</description>
+    </grammar>
+    <grammar>
+        <title>는 중이다</title>
+        <description>быть в процессе</description>
+    </grammar>
+    <grammar>
+        <title>았/었/였으면 좋겠다</title>
+        <description>хотелось бы…, я бы хотел…, вот бы…</description>
+    </grammar>
+    <grammar>
+        <title>으려고 하다</title>
+        <description>собираюсь (сделать что-то)</description>
+    </grammar>
+    <grammar>
+        <title>~보다</title>
+        <description>частица сравнения</description>
     </grammar>
 </grammars>
